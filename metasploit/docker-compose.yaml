@@ -1,0 +1,22 @@
+version: '3.9'
+services:
+  msf-db:
+    image: postgres:11-alpine
+    environment: 
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=msf
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
+    container_name: msf-db
+  msf:
+    image: metasploitframework/metasploit-framework:latest
+    tty: true
+    stdin_open: true
+    ports:
+      - "8443-8500:8443-8500"
+    environment: 
+      - "DATABASE_URL=postgres://postgres:postgres@msf-db:5432/msf"
+    volumes:
+      - ./data/msf/.msf4:/home/msf/.msf4
+    container_name: msf
