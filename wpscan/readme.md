@@ -7,5 +7,5 @@ Despliegue del servicio wpscan en formato docker
 
 Arranque servicio
 ```
-$ docker-compose run wpscan --url https://target.url
+$ docker-compose run --rm wpscan --url https://target.url
 ```

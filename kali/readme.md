@@ -7,5 +7,5 @@ Despliegue del servicio kali en formato docker
 
 Arranque servicio kali
 ```
-$ docker-compose run kali
+$ docker-compose run --rm kali
 ```

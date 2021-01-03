@@ -12,5 +12,5 @@ $ docker-compose up -d msf-db
 
 Arranque servicio metasploit
 ```
-$ docker-compose run msf
+$ docker-compose run --rm msf
 ```
