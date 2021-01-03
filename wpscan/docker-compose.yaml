@@ -1,0 +1,5 @@
+version: '3.9'
+services:
+  wpscan:
+    image: wpscanteam/wpscan:latest
+    container_name: wpscan
